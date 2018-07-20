@@ -17,8 +17,16 @@ public class UIManagement : MonoBehaviour {
 
 	}
 
-    public void HPUIChange (int currentHP)
+    public void HPUIChange(int currentHP)
     {
         //Character 스크립트 AltHP 함수에서 호출
+
+        Debug.Log("1");
+    }
+
+    public void SkillUIChange(float currentSkillGuage)
+    {
+        Debug.Log("2");
+
     }
 }

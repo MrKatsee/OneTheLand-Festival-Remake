@@ -31,6 +31,6 @@ public class PlayManager
     public int p1Character = 1;
     public int p2Character = 2;
 
-    public static float gameTimeScale = 1f;
+    public float gameTimeScale = 1f;
     //For Test
 }

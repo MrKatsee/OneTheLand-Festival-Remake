@@ -7,11 +7,13 @@ public class Character : MonoBehaviour {
     public int pNum;
     public int cNum;
 
-    UIManagement uiManage;
+    public float cSpd;
 
-    int hp_Temp;
+    protected UIManagement uiManagement;
+
     public int hp;  //대입은 Character_Iris / Character_Diana 등, 자식 클래스에서 해줌
     protected int hp_Max;
+    protected int hp_Temp;
 
     public float skillGuage;
 
@@ -22,19 +24,16 @@ public class Character : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        AltHP();
 
-        AltSkillGuage();
+    }
 
-        Input();
-	}
 
-    void AltHP()
+    protected void AltHP()
     {
         if (hp > hp_Max)
         {
@@ -43,19 +42,45 @@ public class Character : MonoBehaviour {
 
         if (hp_Temp != hp)
         {
-            uiManage.HPUIChange(hp);
+            uiManagement.HPUIChange(hp);
         }
 
         hp_Temp = hp;
     }
 
-    void Input()
+    protected void AltSkillGuage()
     {
-        
+        if (skillGuage < 1f)
+        {
+            skillGuage += Time.deltaTime * 0.2f;
+        }
+
+        uiManagement.SkillUIChange(skillGuage);
     }
 
-    void AltSkillGuage()
+    protected void InputKey()
     {
-        
+        if (pNum == 1)
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.Translate(0f, cSpd * Time.deltaTime, 0f);
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.Translate(0f, -cSpd * Time.deltaTime, 0f);
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Translate(-cSpd * Time.deltaTime, 0f, 0f);
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Translate(cSpd * Time.deltaTime, 0f, 0f);
+            }
+        }
     }
 }

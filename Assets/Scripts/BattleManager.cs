@@ -24,8 +24,10 @@ public class BattleManager : MonoBehaviour {
 
     IEnumerator GameCount()
     {
-        yield return new WaitForSeconds(1f);
 
         GetComponent<CreateCharacter>().C_Create(p1CNum, p2CNum);
+
+        yield return new WaitForSeconds(1f);
+
     }
 }
