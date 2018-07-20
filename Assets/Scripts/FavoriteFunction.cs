@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FavoriteFunction : MonoBehaviour {
 
-    GameObject bulletManager;
+    static GameObject bulletManager;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +16,7 @@ public class FavoriteFunction : MonoBehaviour {
 		
 	}
 
-    public void BulletInstantiate(GameObject bulletObject, int pNum)
+    public static void BulletInstantiate(GameObject bulletObject, int pNum, Transform myTransform)
     {
         GameObject bullet;
         Vector3 addPosition = new Vector3(0f, 0f, 0f);
@@ -30,7 +30,7 @@ public class FavoriteFunction : MonoBehaviour {
             addPosition = new Vector3(-5f, 0f, 0f);
         }
 
-        bullet = Instantiate(bulletObject, transform.position + addPosition, Quaternion.identity);
+        bullet = Instantiate(bulletObject, myTransform.position + addPosition, Quaternion.identity);
         bullet.transform.parent = bulletManager.transform;
         bullet.GetComponent<Bullet>().pNum_Bullet = pNum;
         

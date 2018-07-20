@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114472658793379660}
   - component: {fileID: 114051653223120236}
   - component: {fileID: 114573092094179532}
-  - component: {fileID: 114471971562123542}
+  - component: {fileID: 114129693062366746}
   m_Layer: 0
   m_Name: C_Iris
   m_TagString: Untagged
@@ -58,12 +58,10 @@ MonoBehaviour:
   pNum: 0
   cNum: 0
   cSpd: 0
-  uiManagement: {fileID: 0}
-  myFunction: {fileID: 0}
   hp: 0
   skillGuage: 0
   nomalBullet: {fileID: 0}
---- !u!114 &114471971562123542
+--- !u!114 &114129693062366746
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

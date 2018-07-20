@@ -24,7 +24,7 @@ public class Character_Iris : Character {
 
     // Use this for initialization
     void Start () {
-        myFunction = gameObject.GetComponent(typeof(FavoriteFunction)) as FavoriteFunction;
+        myFunction = gameObject.GetComponent<FavoriteFunction>();
          
     }
 
@@ -35,7 +35,6 @@ public class Character_Iris : Character {
         AltSkillGuage();
 
         InputKey();
-
 
         NomalAttack();
 
