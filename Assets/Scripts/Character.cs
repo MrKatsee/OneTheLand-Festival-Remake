@@ -10,7 +10,7 @@ public class Character : MonoBehaviour {
     public float cSpd;
 
     protected UIManagement uiManagement;
-    protected FavoriteFunction myFunction;
+	public FavoriteFunction myFunction;
 
     public int hp;  //대입은 Character_Iris / Character_Diana 등, 자식 클래스에서 해줌
     protected int hp_Max;
@@ -22,7 +22,6 @@ public class Character : MonoBehaviour {
 
     private void Awake()
     {
-
     }
 
     // Use this for initialization
@@ -33,7 +32,11 @@ public class Character : MonoBehaviour {
     void Update () {
 
     }
-
+	protected virtual void UI_Setting(int hp_Max, int pNum, int cNum)
+	{
+		uiManagement.HPUISetting(hp_Max,pNum);
+		uiManagement.SkillUISetting (cNum, pNum);
+	}
 
     protected void AltHP()
     {
