@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HPManagement : Character {
+public class HPManagement : MonoBehaviour {
 
-    int hp_Temp;
     GameObject[] hp_UI = new GameObject[5];
 
 	// Use this for initialization
@@ -15,6 +14,11 @@ public class HPManagement : Character {
 	
 	// Update is called once per frame
 	void Update () {
-        hp_Temp = hp;
+
 	}
+
+    public void HPUIChange (int currentHP)
+    {
+
+    }
 }
