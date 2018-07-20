@@ -39,21 +39,21 @@ public class UIManagement : MonoBehaviour {
 		for (int i = 0; i < hp_max; i++) {
 			SkillGauge_Fill=Instantiate(hp);
 			SkillGauge_Fill.transform.SetParent(Battle_UI.GetComponent<Canvas> ().transform, false);
-			SkillGauge_Fill.GetComponent<RectTransform> ().position = new Vector3 (pRotation*(-250f+i*40f), 370f, 0f);
+			SkillGauge_Fill.GetComponent<RectTransform> ().position = new Vector3 (370f+pRotation*(250f-i*40f), 370f, 0f);
 			SkillGauge_Fill.transform.localScale = new Vector3(pRotation, 1f,0f);
 		}
 	}
 
 	public void SkillUISetting(int cNum, int pNum)
 	{
-		float pRotation=-(1.5f-pNum)*2f;
+		float pRotation=(1.5f-pNum)*2f;
 		SkillGauge_Empty=Instantiate(SkillGauge_Empty_Resources[cNum-1]);
 		SkillGauge_Empty.transform.SetParent(Battle_UI.GetComponent<Canvas> ().transform, false);
-		SkillGauge_Empty.GetComponent<RectTransform> ().position = new Vector3 (pRotation*(200f), 390f, 0f);
+		SkillGauge_Empty.GetComponent<RectTransform> ().position = new Vector3 (pRotation*(200f)+370f, 390f, 0f);
 		SkillGauge_Empty.transform.localScale = new Vector3(pRotation, 1f,0f);
 		SkillGauge_Fill=Instantiate(SkillGauge_Fill_Resources);
 		SkillGauge_Fill.transform.SetParent(Battle_UI.GetComponent<Canvas> ().transform, false);
-		SkillGauge_Fill.GetComponent<RectTransform> ().position = new Vector3 (pRotation*(200f), 390f, 0f);
+		SkillGauge_Fill.GetComponent<RectTransform> ().position = new Vector3 (-pRotation*(200f)+370f, 390f, 0f);
 		SkillGauge_Fill.transform.localScale = new Vector3(pRotation, 1f,0f);
 	}
 
