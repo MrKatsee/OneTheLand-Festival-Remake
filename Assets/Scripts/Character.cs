@@ -19,7 +19,6 @@ public class Character : MonoBehaviour {
 
     private void Awake()
     {
-
     }
 
     // Use this for initialization
@@ -31,7 +30,11 @@ public class Character : MonoBehaviour {
 	void Update () {
 
     }
-
+	protected virtual void UI_Setting(int hp_Max, int pNum, int cNum)
+	{
+		uiManagement.HPUISetting(hp_Max,pNum);
+		uiManagement.SkillUISetting (cNum, pNum);
+	}
 
     protected void AltHP()
     {

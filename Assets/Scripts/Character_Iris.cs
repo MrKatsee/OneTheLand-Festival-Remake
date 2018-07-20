@@ -21,8 +21,9 @@ public class Character_Iris : Character {
     }
 
     // Use this for initialization
-    void Start () {
-
+	void Start () {
+		uiManagement = gameObject.GetComponent (typeof(UIManagement)) as UIManagement;
+		UI_Setting (hp_Max, pNum, cNum);
     }
 	
 	// Update is called once per frame
@@ -34,6 +35,10 @@ public class Character_Iris : Character {
         InputKey();
     }
 
-
+	protected override void UI_Setting(int hp_Max, int pNum, int cNum)
+	{
+		uiManagement.HPUISetting(hp_Max,pNum);
+		uiManagement.SkillUISetting (cNum, pNum);
+	}
 
 }

@@ -22,13 +22,17 @@ public class Character_Diana : Character {
 
     // Use this for initialization
     void Start()
-    {
-
+	{
+		uiManagement = gameObject.GetComponent (typeof(UIManagement)) as UIManagement;
+		UI_Setting (hp_Max, pNum, cNum);
     }
 
     // Update is called once per frame
     void Update()
     {
+		if (Input.GetKeyDown (KeyCode.Z)) {
+			hp--;
+		}
         AltHP();
 
         AltSkillGuage();
