@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Character_Iris : Character {
 
-    Character myCharacter;
-
     private void Awake()
     {
         hp = 4;
         hp_Max = hp;
+        hp_Temp = hp;
         cSpd = 100f;
 
         if (PlayManager.Instance.p1Character == 1)

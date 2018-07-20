@@ -55,7 +55,7 @@ public class Character : MonoBehaviour {
             skillGuage += Time.deltaTime * 0.2f;
         }
 
-        uiManagement.SkillUIChange(skillGuage);
+        //uiManagement.SkillUIChange(skillGuage);
     }
 
     protected void InputKey()
