@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager
+public class PlayManager
 {
-    public static GameManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
-    public static GameManager Instance
+    public static PlayManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
+    public static PlayManager Instance
     {
         get { return GetInstance(); }
     }
-    public static GameManager GetInstance()
+    public static PlayManager GetInstance()
     {
         if (instance == null)
-            instance = new GameManager();
+            instance = new PlayManager();
         return instance;
     }
 
 
-    GameManager()
+    PlayManager()
     {
         InitGame();
     }
@@ -30,5 +30,7 @@ public class GameManager
 
     public int p1Character = 1;
     public int p2Character = 2;
+
+    public static float gameTimeScale = 1f;
     //For Test
 }

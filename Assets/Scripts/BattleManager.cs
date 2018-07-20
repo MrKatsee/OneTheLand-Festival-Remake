@@ -8,8 +8,8 @@ public class BattleManager : MonoBehaviour {
 
     private void Awake()
     {
-        p1CNum = GameManager.Instance.p1Character;
-        p2CNum = GameManager.Instance.p2Character;
+        p1CNum = PlayManager.Instance.p1Character;
+        p2CNum = PlayManager.Instance.p2Character;
     }
 
     // Use this for initialization

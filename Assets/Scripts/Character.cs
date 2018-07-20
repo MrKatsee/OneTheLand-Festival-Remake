@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Character : Player {
 
+    public int hp;
+    protected int hp_Max;
+
+    public float skillGuage;
 
 	// Use this for initialization
 	void Start () {

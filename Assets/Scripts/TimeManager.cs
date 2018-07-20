@@ -16,7 +16,6 @@ public static class TimeManager
             break;
         }
     }
-
     // use :  yield return StartCoroutine(TimeManager.WaitForRealTime(1));
 
 }

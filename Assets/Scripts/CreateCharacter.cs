@@ -27,9 +27,11 @@ public class CreateCharacter : MonoBehaviour {
 
         p1 = Instantiate(pr_Character[p1CNum - 1], new Vector3(-50f, 0f, -1f), Quaternion.identity);
         p1.GetComponent<Player>().pNum = 1;
+        p1.GetComponent<Player>().cNum = p1CNum;
         p1.transform.localScale = new Vector3(1f, 1f, 1f);
         p2 = Instantiate(pr_Character[p2CNum - 1], new Vector3(50f, 0f, -1f), Quaternion.identity);
         p2.GetComponent<Player>().pNum = 2;
+        p2.GetComponent<Player>().cNum = p1CNum;
         p2.transform.localScale = new Vector3 (-1f, 1f, 1f);
     }
 }

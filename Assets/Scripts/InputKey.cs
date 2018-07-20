@@ -2,13 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
-
-    public int pNum;
-    public int cNum;
-
-    //모든 플레이어가 공유하는 것 : HP 관리, 조작, 스킬 발동 -> 캐릭터 클래스에
-    //
+public class InputKey : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
