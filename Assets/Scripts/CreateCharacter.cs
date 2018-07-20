@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CreateCharacter : MonoBehaviour {
 
-    GameObject[] pr_Character = new GameObject[7];
+    public GameObject[] pr_Character = new GameObject[7];
 
     // Use this for initialization
     private void Awake()

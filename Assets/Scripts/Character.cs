@@ -10,7 +10,6 @@ public class Character : MonoBehaviour {
     public float cSpd;
 
     protected UIManagement uiManagement;
-	public FavoriteFunction myFunction;
 
     public int hp;  //대입은 Character_Iris / Character_Diana 등, 자식 클래스에서 해줌
     protected int hp_Max;
@@ -114,6 +113,6 @@ public class Character : MonoBehaviour {
 
     public virtual void NomalAttack()
     {
-        myFunction.BulletInstantiate(nomalBullet, pNum);
+        FavoriteFunction.BulletInstantiate(nomalBullet, pNum, transform);
     }
 }

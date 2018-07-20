@@ -23,31 +23,14 @@ public class Character_Iris : Character {
     }
 
     // Use this for initialization
-<<<<<<< HEAD
-    void Start () {
-        myFunction = gameObject.GetComponent<FavoriteFunction>();
-=======
+
 	void Start () {
 		uiManagement = gameObject.GetComponent (typeof(UIManagement)) as UIManagement;
 		UI_Setting (hp_Max, pNum, cNum);
-		myFunction = gameObject.GetComponent<FavoriteFunction> ();
->>>>>>> 578a3fc15033b50a163ea93a74b052a0ae371a90
-         
     }
 
     // Update is called once per frame
-<<<<<<< HEAD
-    void Update () {
-        AltHP();
 
-        AltSkillGuage();
-
-        InputKey();
-
-        NomalAttack();
-
-    }
-=======
 	void Update () {
 		NomalAttack();
 		AltHP ();
@@ -61,11 +44,10 @@ public class Character_Iris : Character {
 		uiManagement.HPUISetting(hp_Max,pNum);
 		uiManagement.SkillUISetting (cNum, pNum);
 	}
->>>>>>> 578a3fc15033b50a163ea93a74b052a0ae371a90
 
     public override void NomalAttack()
     {
-        myFunction.BulletInstantiate(nomalBullet, pNum);
+        FavoriteFunction.BulletInstantiate(nomalBullet, pNum, transform);
     }
 
 }
