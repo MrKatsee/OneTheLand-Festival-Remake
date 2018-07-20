@@ -7,7 +7,7 @@ public class Character : MonoBehaviour {
     public int pNum;
     public int cNum;
 
-    HPManagement hpUI;
+    UIManagement uiManage;
 
     int hp_Temp;
     public int hp;  //대입은 Character_Iris / Character_Diana 등, 자식 클래스에서 해줌
@@ -43,7 +43,7 @@ public class Character : MonoBehaviour {
 
         if (hp_Temp != hp)
         {
-            hpUI.HPUIChange(hp);
+            uiManage.HPUIChange(hp);
         }
 
         hp_Temp = hp;
@@ -56,6 +56,6 @@ public class Character : MonoBehaviour {
 
     void AltSkillGuage()
     {
-
+        
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HPManagement : MonoBehaviour {
+public class UIManagement : MonoBehaviour {
 
     GameObject[] hp_UI = new GameObject[5];  //이거 써서 HP UI 만드셈 GameObject.Find로
 
