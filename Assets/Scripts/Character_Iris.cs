@@ -9,7 +9,7 @@ public class Character_Iris : Character {
         hp = 4;
         hp_Max = hp;
         hp_Temp = hp;
-        cSpd = 100f;
+        cSpd = 50f;
 
         if (PlayManager.Instance.p1Character == 1)
             pNum = 1;
@@ -18,22 +18,32 @@ public class Character_Iris : Character {
             pNum = 2;
 
         cNum = 1;
+
+        nomalBullet = Resources.Load("Characters/Iris/Bullet/Bullet_IrisNomalBullet") as GameObject;
     }
 
     // Use this for initialization
     void Start () {
-
+        myFunction = gameObject.GetComponent(typeof(FavoriteFunction)) as FavoriteFunction;
+         
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         AltHP();
 
         AltSkillGuage();
 
         InputKey();
+
+
+        NomalAttack();
+
     }
 
-
+    public override void NomalAttack()
+    {
+        myFunction.BulletInstantiate(nomalBullet, pNum);
+    }
 
 }

@@ -27,7 +27,6 @@ public class BattleManager : MonoBehaviour {
 
         GetComponent<CreateCharacter>().C_Create(p1CNum, p2CNum);
 
-        yield return new WaitForSeconds(1f);
-
+        yield return StartCoroutine(TimeManager.WaitForRealTime(1f));
     }
 }

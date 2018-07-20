@@ -21,8 +21,9 @@ GameObject:
   - component: {fileID: 4626196738540142}
   - component: {fileID: 212786316841720426}
   - component: {fileID: 114472658793379660}
-  - component: {fileID: 114815299896087556}
   - component: {fileID: 114051653223120236}
+  - component: {fileID: 114573092094179532}
+  - component: {fileID: 114471971562123542}
   m_Layer: 0
   m_Name: C_Iris
   m_TagString: Untagged
@@ -57,8 +58,22 @@ MonoBehaviour:
   pNum: 0
   cNum: 0
   cSpd: 0
+  uiManagement: {fileID: 0}
+  myFunction: {fileID: 0}
   hp: 0
   skillGuage: 0
+  nomalBullet: {fileID: 0}
+--- !u!114 &114471971562123542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1513417620926072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04a374098496b44bb4e30571f27c8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114472658793379660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pNum: 0
---- !u!114 &114815299896087556
+--- !u!114 &114573092094179532
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -79,14 +94,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1513417620926072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5630907d98882b347b85ed1ff05de2ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d9a5236f61bb9c4fb6f9e52d3e37f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pNum: 0
-  cNum: 0
-  cSpd: 0
-  hp: 0
-  skillGuage: 0
 --- !u!212 &212786316841720426
 SpriteRenderer:
   m_ObjectHideFlags: 1
