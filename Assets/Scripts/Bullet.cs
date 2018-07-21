@@ -23,4 +23,14 @@ public class Bullet : MonoBehaviour {
     {
         transform.position += directionVector * bSpd;
     }
+
+    public virtual void DestroyBullet()
+    {
+        Destroy(gameObject);
+    }
+    
+    public virtual void AutoDestroy()
+    {
+        Destroy(gameObject, 10f);
+    }
 }

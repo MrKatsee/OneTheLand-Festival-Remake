@@ -27,7 +27,7 @@ public class Character_Diana : Character {
 	{
 
 		uiManagement = GameObject.Find ("Battle_UI").GetComponent<UIManagement>();
-		UI_Setting();
+		UI_Setting(hp_Max, pNum, cNum);
         StartCoroutine(NomalAttack());
     }
 

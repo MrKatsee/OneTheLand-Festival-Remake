@@ -10,6 +10,7 @@ public class Bullet_IrisNomal : Bullet {
         bSpd = 1f;
         FavoriteFunction.ObjectRotation(directionVector, gameObject);
 
+        AutoDestroy();
     }
 
     // Update is called once per frame

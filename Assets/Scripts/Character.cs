@@ -131,4 +131,17 @@ public class Character : MonoBehaviour {
             yield return new WaitForSeconds(1f);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D c)
+    {
+        if (c.tag == "Bullet" && c.GetComponent<Bullet>().pNum_Bullet != pNum)
+        {
+            hp -= 1;
+
+            if (c.GetComponent<Bullet>().canDestroy == true)
+            {
+                c.GetComponent<Bullet>().DestroyBullet();
+            }
+        }
+    }
 }

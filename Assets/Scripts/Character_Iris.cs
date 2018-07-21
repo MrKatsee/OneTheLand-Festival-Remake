@@ -27,7 +27,7 @@ public class Character_Iris : Character {
 	void Start () {
 
 		uiManagement = GameObject.Find ("Battle_UI").GetComponent<UIManagement>();
-		UI_Setting();
+		UI_Setting(hp_Max, pNum, cNum);
         StartCoroutine(NomalAttack());
     }
 

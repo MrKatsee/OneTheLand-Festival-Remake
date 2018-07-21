@@ -9,6 +9,8 @@ public class Bullet_DianaNomal : Bullet {
         directionVector = pNum_Bullet == 1 ? new Vector3(1f, 0f, 0f) : new Vector3(-1f, 0f, 0f);
         bSpd = 0.5f;
         FavoriteFunction.ObjectRotation(directionVector, gameObject);
+
+        AutoDestroy();
     }
 	
 	// Update is called once per frame
