@@ -19,7 +19,7 @@ public class Character_Iris : Character {
 
         cNum = 1;
 
-        nomalBullet = Resources.Load("Characters/Iris/Bullet/Bullet_IrisNomalBullet") as GameObject;
+        nomalBullet = Resources.Load("Characters/Iris/Bullet/Bullet_IrisNomal") as GameObject;
     }
 
     // Use this for initialization

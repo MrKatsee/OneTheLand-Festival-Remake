@@ -18,6 +18,8 @@ public class Character_Diana : Character {
             pNum = 2;
 
         cNum = 2;
+
+        nomalBullet = Resources.Load("Characters/Diana/Bullet/Bullet_DianaNomal") as GameObject;
     }
 
     // Use this for initialization
@@ -25,11 +27,15 @@ public class Character_Diana : Character {
 	{
 		uiManagement = gameObject.GetComponent (typeof(UIManagement)) as UIManagement;
 		UI_Setting (hp_Max, pNum, cNum);
+
+        StartCoroutine(NomalAttack());
     }
 
     // Update is called once per frame
     void Update()
     {
+        NomalAttack();
+
         AltHP();
 
         AltSkillGuage();
@@ -38,4 +44,15 @@ public class Character_Diana : Character {
 
         positionCommu();
     }
+
+    public override IEnumerator NomalAttack()
+    {
+        while (true)
+        {
+            FavoriteFunction.BulletInstantiate(nomalBullet, pNum, transform);
+
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
 }
