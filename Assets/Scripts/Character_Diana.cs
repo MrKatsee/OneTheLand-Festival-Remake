@@ -25,31 +25,23 @@ public class Character_Diana : Character {
     // Use this for initialization
     void Start()
 	{
-<<<<<<< HEAD
-		uiManagement = GameObject.Find ("Battle_UI").GetComponent<UIManagement>();
-		UI_Setting();
-=======
+
 		uiManagement = gameObject.GetComponent (typeof(UIManagement)) as UIManagement;
 		UI_Setting (hp_Max, pNum, cNum);
 
         StartCoroutine(NomalAttack());
->>>>>>> 6bddd9de7856d8456031886a529dddc004bf971b
     }
 
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
-		AltHP();
-		AltSkillGuage ();
-=======
+
         NomalAttack();
 
         AltHP();
 
         AltSkillGuage();
 
->>>>>>> 6bddd9de7856d8456031886a529dddc004bf971b
         InputKey();
 
         positionCommu();

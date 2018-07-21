@@ -31,7 +31,7 @@ public class Character : MonoBehaviour {
     void Update () {
 
     }
-	public void UI_Setting()
+	public virtual void UI_Setting(int hp_Max, int pNum, int cNum)
 	{
 		uiManagement.HPUISetting (hp_Max, pNum);
 		uiManagement.SkillUISetting ( cNum, pNum);

@@ -17,20 +17,14 @@ public class UIManagement : MonoBehaviour {
 
 	}
 
-<<<<<<< HEAD
-	// Update is called once per frame
-	void Update () {
-	}
-	public void HPUISetting(int hp_Max, int pNum)
-=======
+
     // Update is called once per frame
     void Update()
     {
 
     }
 
-	public void HPUISetting(int hp_max, int pNum)
->>>>>>> 6bddd9de7856d8456031886a529dddc004bf971b
+	public void HPUISetting(int hp_Max, int pNum)
 	{
 		int p=((pNum-1)*5);
 		hp_UI[0].SetActive (true);
