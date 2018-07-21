@@ -7,64 +7,54 @@ public class UIManagement : MonoBehaviour {
 
 	GameObject Battle_UI;
 
-	GameObject[] hp_UI = new GameObject[5];  //이거 써서 HP UI 만드셈 GameObject.Find로
-	GameObject hp;
+	public GameObject[] hp_UI = new GameObject[10];  //이거 써서 HP UI 만드셈 GameObject.Find로
 
-	GameObject SkillGauge_Fill;
-	GameObject SkillGauge_Empty;
-	GameObject SkillGauge_Fill_Resources;
-	GameObject[] SkillGauge_Empty_Resources= new GameObject[7];
+	public GameObject[] SkillGauge_Fill= new GameObject[2];
+	public GameObject[] SkillGauge_Empty=new GameObject[2];
+	public Sprite[] SkillGauge_Empty_Resources=new Sprite[7];
 
-
-	private void Awake()
-	{
-		hp = Resources.Load ("UI/HP") as GameObject;
-		SkillGauge_Fill_Resources = Resources.Load ("UI/SkillGauge_Fill") as GameObject;
-		SkillGauge_Empty_Resources[0] = Resources.Load ("UI/SkillGauge_Charater") as GameObject;//캐릭터별 게이지바
-		SkillGauge_Empty_Resources[1] = Resources.Load ("UI/SkillGauge_Charater") as GameObject;
-		Battle_UI = GameObject.Find ("Battle_UI");
-	}
-	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-
 	}
-	public void HPUISetting(int hp_max, int pNum)
+	public void HPUISetting(int hp_Max, int pNum)
 	{
-		float pRotation=(1.5f-pNum)*2f;
-		for (int i = 0; i < hp_max; i++) {
-			SkillGauge_Fill=Instantiate(hp);
-			SkillGauge_Fill.transform.SetParent(Battle_UI.GetComponent<Canvas> ().transform, false);
-			SkillGauge_Fill.GetComponent<RectTransform> ().position = new Vector3 (370f+pRotation*(250f-i*40f), 370f, 0f);
-			SkillGauge_Fill.transform.localScale = new Vector3(pRotation, 1f,0f);
+		int p=((pNum-1)*5);
+		hp_UI[0].SetActive (true);
+		hp_UI[1].SetActive (true);
+		hp_UI[2].SetActive (true);
+		hp_UI[3].SetActive (true);
+		hp_UI[4].SetActive (true);
+		hp_UI[5].SetActive (true);
+		hp_UI[6].SetActive (true);
+		hp_UI[7].SetActive (true);
+		hp_UI[8].SetActive (true);
+		hp_UI[9].SetActive (true);
+		Debug.Log (p+hp_Max-1);
+		Debug.Log (p+4);
+		for (int i = p + 4; i > p+hp_Max- 1; i--) {
+			hp_UI [i].SetActive (false);
 		}
 	}
 
 	public void SkillUISetting(int cNum, int pNum)
 	{
-		float pRotation=(1.5f-pNum)*2f;
-		SkillGauge_Empty=Instantiate(SkillGauge_Empty_Resources[cNum-1]);
-		SkillGauge_Empty.transform.SetParent(Battle_UI.GetComponent<Canvas> ().transform, false);
-		SkillGauge_Empty.GetComponent<RectTransform> ().position = new Vector3 (pRotation*(200f)+370f, 390f, 0f);
-		SkillGauge_Empty.transform.localScale = new Vector3(pRotation, 1f,0f);
-		SkillGauge_Fill=Instantiate(SkillGauge_Fill_Resources);
-		SkillGauge_Fill.transform.SetParent(Battle_UI.GetComponent<Canvas> ().transform, false);
-		SkillGauge_Fill.GetComponent<RectTransform> ().position = new Vector3 (-pRotation*(200f)+370f, 390f, 0f);
-		SkillGauge_Fill.transform.localScale = new Vector3(pRotation, 1f,0f);
+		SkillGauge_Fill[pNum-1].GetComponent<Image> ().fillAmount = 0;
+		SkillGauge_Empty [pNum-1].GetComponent<Image>().sprite=SkillGauge_Empty_Resources[cNum-1];
 	}
 
-    public void HPUIChange(int currentHP)
-    {
-		Destroy (hp_UI[currentHP--]);
-    }
+	public void HPUIChange(int currentHP , int pNum)
+	{
+		int p=((pNum-1)*5);
+		Destroy (hp_UI[currentHP-1+p]);
+	}
 
-    public void SkillUIChange(float currentSkillGuage)
-    {
-        Debug.Log("2");
+	public void SkillUIChange(float currentSkillGuage, int pNum)
+	{
+		SkillGauge_Fill[pNum-1].GetComponent<Image> ().fillAmount = currentSkillGuage;
+	}
 
-    }
 }

@@ -23,17 +23,15 @@ public class Character_Diana : Character {
     // Use this for initialization
     void Start()
 	{
-		uiManagement = gameObject.GetComponent (typeof(UIManagement)) as UIManagement;
-		UI_Setting (hp_Max, pNum, cNum);
+		uiManagement = GameObject.Find ("Battle_UI").GetComponent<UIManagement>();
+		UI_Setting();
     }
 
     // Update is called once per frame
     void Update()
     {
-        AltHP();
-
-        AltSkillGuage();
-
+		AltHP();
+		AltSkillGuage ();
         InputKey();
     }
 }

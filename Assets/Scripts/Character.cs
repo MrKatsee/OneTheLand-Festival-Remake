@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class Character : MonoBehaviour {
 
+	public UIManagement uiManagement;
     public int pNum;
     public int cNum;
 
     public float cSpd;
 
-    protected UIManagement uiManagement;
-
     public int hp;  //대입은 Character_Iris / Character_Diana 등, 자식 클래스에서 해줌
-    protected int hp_Max;
-    protected int hp_Temp;
+	protected int hp_Max;
+	protected int hp_Temp;
 
     public float skillGuage;
 
     public GameObject nomalBullet;
 
-    private void Awake()
+    void Awake()
     {
     }
 
@@ -31,36 +30,34 @@ public class Character : MonoBehaviour {
     void Update () {
 
     }
-	protected virtual void UI_Setting(int hp_Max, int pNum, int cNum)
+	public void UI_Setting()
 	{
-		uiManagement.HPUISetting(hp_Max,pNum);
-		uiManagement.SkillUISetting (cNum, pNum);
+		uiManagement.HPUISetting (hp_Max, pNum);
+		uiManagement.SkillUISetting ( cNum, pNum);
+	}
+	public void AltHP()
+	{
+		if (hp > hp_Max)
+		{
+			hp = hp_Max;
+		}
+
+		if (hp_Temp != hp)
+		{
+			uiManagement.HPUIChange(hp, pNum);
+		}
+
+		hp_Temp = hp;
 	}
 
-    protected void AltHP()
-    {
-        if (hp > hp_Max)
-        {
-            hp = hp_Max;
-        }
-
-        if (hp_Temp != hp)
-        {
-            uiManagement.HPUIChange(hp);
-        }
-
-        hp_Temp = hp;
-    }
-
-    protected void AltSkillGuage()
-    {
-        if (skillGuage < 1f)
-        {
-            skillGuage += Time.deltaTime * 0.2f;
-        }
-
-        //uiManagement.SkillUIChange(skillGuage);
-    }
+	public void AltSkillGuage()
+	{
+		if (skillGuage < 1f)
+		{
+			skillGuage = skillGuage+Time.deltaTime * 0.2f;
+		}
+		uiManagement.SkillUIChange(skillGuage, pNum);
+	}
 
     protected void InputKey()
     {

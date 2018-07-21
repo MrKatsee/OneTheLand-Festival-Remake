@@ -25,24 +25,17 @@ public class Character_Iris : Character {
     // Use this for initialization
 
 	void Start () {
-		uiManagement = gameObject.GetComponent (typeof(UIManagement)) as UIManagement;
-		UI_Setting (hp_Max, pNum, cNum);
+		uiManagement = GameObject.Find ("Battle_UI").GetComponent<UIManagement>();
+		UI_Setting();
     }
 
     // Update is called once per frame
 
 	void Update () {
-		NomalAttack();
-		AltHP ();
-
+		AltHP();
 		AltSkillGuage ();
-
+		NomalAttack();
 		InputKey ();
-	}
-	protected override void UI_Setting(int hp_Max, int pNum, int cNum)
-	{
-		uiManagement.HPUISetting(hp_Max,pNum);
-		uiManagement.SkillUISetting (cNum, pNum);
 	}
 
     public override void NomalAttack()
