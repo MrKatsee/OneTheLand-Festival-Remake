@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4371421540329996}
   - component: {fileID: 212615282245035224}
   - component: {fileID: 114911185047498268}
-  - component: {fileID: 114089171651685934}
   - component: {fileID: 114147967343722182}
   m_Layer: 0
   m_Name: C_Iris
@@ -43,17 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114089171651685934
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1388906045943884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d9a5236f61bb9c4fb6f9e52d3e37f51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114147967343722182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76,6 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd65ac16315a3ea4cae6ee72d818c604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManagement: {fileID: 0}
   pNum: 0
   cNum: 0
   cSpd: 0

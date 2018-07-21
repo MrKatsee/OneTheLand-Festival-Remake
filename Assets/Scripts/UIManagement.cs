@@ -26,7 +26,6 @@ public class UIManagement : MonoBehaviour {
 
 	public void HPUISetting(int hp_Max, int pNum)
 	{
-		int p=((pNum-1)*5);
 		hp_UI[0].SetActive (true);
 		hp_UI[1].SetActive (true);
 		hp_UI[2].SetActive (true);
@@ -37,10 +36,23 @@ public class UIManagement : MonoBehaviour {
 		hp_UI[7].SetActive (true);
 		hp_UI[8].SetActive (true);
 		hp_UI[9].SetActive (true);
-		Debug.Log (p+hp_Max-1);
-		Debug.Log (p+4);
-		for (int i = p + 4; i > p+hp_Max- 1; i--) {
-			hp_UI [i].SetActive (false);
+		if (hp_Max == 4&&pNum==1) 
+		{
+			hp_UI [4].SetActive (false);
+		}
+		else if (hp_Max == 3&&pNum==1) {
+
+			hp_UI [4].SetActive (false);
+			hp_UI [3].SetActive (false);
+		}
+		if (hp_Max == 4&&pNum==2) {
+
+			hp_UI [9].SetActive (false);
+		}
+		else if (hp_Max == 3&&pNum==2) {
+
+			hp_UI [9].SetActive (false);
+			hp_UI [8].SetActive (false);
 		}
 	}
 

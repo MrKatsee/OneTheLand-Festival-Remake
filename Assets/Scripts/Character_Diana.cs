@@ -26,16 +26,14 @@ public class Character_Diana : Character {
     void Start()
 	{
 
-		uiManagement = gameObject.GetComponent (typeof(UIManagement)) as UIManagement;
-		UI_Setting (hp_Max, pNum, cNum);
-
+		uiManagement = GameObject.Find ("Battle_UI").GetComponent<UIManagement>();
+		UI_Setting();
         StartCoroutine(NomalAttack());
     }
 
     // Update is called once per frame
     void Update()
     {
-
         NomalAttack();
 
         AltHP();

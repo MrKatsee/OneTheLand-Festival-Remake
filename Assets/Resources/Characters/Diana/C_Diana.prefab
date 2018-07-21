@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4837050380197364}
   - component: {fileID: 212492401986872834}
   - component: {fileID: 114162081373680808}
-  - component: {fileID: 114190735223656152}
   m_Layer: 0
   m_Name: C_Diana
   m_TagString: Untagged
@@ -53,24 +52,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e43d83a34ba0b81479f2d2d5ac57d4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManagement: {fileID: 0}
   pNum: 0
   cNum: 0
   cSpd: 0
-  myFunction: {fileID: 0}
   hp: 0
   skillGuage: 0
   nomalBullet: {fileID: 0}
---- !u!114 &114190735223656152
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1176122212942164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d9a5236f61bb9c4fb6f9e52d3e37f51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212492401986872834
 SpriteRenderer:
   m_ObjectHideFlags: 1

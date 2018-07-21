@@ -26,9 +26,8 @@ public class Character_Iris : Character {
 
 	void Start () {
 
-		uiManagement = gameObject.GetComponent (typeof(UIManagement)) as UIManagement;
-		UI_Setting (hp_Max, pNum, cNum);
-
+		uiManagement = GameObject.Find ("Battle_UI").GetComponent<UIManagement>();
+		UI_Setting();
         StartCoroutine(NomalAttack());
     }
 
@@ -36,7 +35,6 @@ public class Character_Iris : Character {
 
 	void Update () {
 
-		NomalAttack();
 
 		AltHP ();
 
@@ -44,15 +42,10 @@ public class Character_Iris : Character {
 		NomalAttack();
 		InputKey ();
 
-
         positionCommu();
 
     }
-	public override void UI_Setting(int hp_Max, int pNum, int cNum)
-	{
-		uiManagement.HPUISetting(hp_Max,pNum);
-		uiManagement.SkillUISetting (cNum, pNum);
-	}
+
 
     public override IEnumerator NomalAttack()
     {
