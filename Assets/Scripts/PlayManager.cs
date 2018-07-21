@@ -32,5 +32,8 @@ public class PlayManager
     public int p2Character = 2;
 
     public float gameTimeScale = 1f;
+
+    public Vector3 p1Position;
+    public Vector3 p2Position;
     //For Test
 }
