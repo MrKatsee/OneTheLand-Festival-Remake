@@ -25,6 +25,7 @@ public class Character : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
     }
 
     // Update is called once per frame
@@ -111,8 +112,26 @@ public class Character : MonoBehaviour {
         }
     }
 
-    public virtual void NomalAttack()
+    protected void positionCommu()
     {
-        FavoriteFunction.BulletInstantiate(nomalBullet, pNum, transform);
+        if (pNum == 1)
+        {
+            PlayManager.Instance.p1Position = transform.position;
+        }
+
+        if (pNum == 2)
+        {
+            PlayManager.Instance.p2Position = transform.position;
+        }
+    }
+
+    public virtual IEnumerator NomalAttack()
+    {
+        while (true)
+        {
+            FavoriteFunction.BulletInstantiate(nomalBullet, pNum, transform);
+
+            yield return new WaitForSeconds(1f);
+        }
     }
 }

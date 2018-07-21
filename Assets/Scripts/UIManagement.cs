@@ -28,11 +28,13 @@ public class UIManagement : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-	}
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
 	public void HPUISetting(int hp_max, int pNum)
 	{
 		float pRotation=(1.5f-pNum)*2f;

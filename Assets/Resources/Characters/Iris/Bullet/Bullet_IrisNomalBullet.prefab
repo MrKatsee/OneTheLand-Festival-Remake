@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4777527771129350}
   - component: {fileID: 212023632008315852}
-  - component: {fileID: 114190117404034604}
+  - component: {fileID: 114310695654666774}
   m_Layer: 0
   m_Name: Bullet_IrisNomalBullet
   m_TagString: Untagged
@@ -36,12 +36,12 @@ Transform:
   m_GameObject: {fileID: 1099408654285836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114190117404034604
+--- !u!114 &114310695654666774
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,11 +49,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1099408654285836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9daa6fbc663df1a46a7fc07ca243a2f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 63de34e94c36f3f4189ff4b7d182031f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pNum_Bullet: 0
   canDestroy: 1
+  bSpd: 0
+  directionVector: {x: 0, y: 0, z: 0}
 --- !u!212 &212023632008315852
 SpriteRenderer:
   m_ObjectHideFlags: 1

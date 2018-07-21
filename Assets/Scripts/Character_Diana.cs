@@ -35,5 +35,7 @@ public class Character_Diana : Character {
         AltSkillGuage();
 
         InputKey();
+
+        positionCommu();
     }
 }

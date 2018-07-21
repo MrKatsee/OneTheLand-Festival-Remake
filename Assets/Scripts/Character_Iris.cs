@@ -27,27 +27,38 @@ public class Character_Iris : Character {
 	void Start () {
 		uiManagement = gameObject.GetComponent (typeof(UIManagement)) as UIManagement;
 		UI_Setting (hp_Max, pNum, cNum);
+
+        StartCoroutine(NomalAttack());
     }
 
     // Update is called once per frame
 
 	void Update () {
 		NomalAttack();
+
 		AltHP ();
 
 		AltSkillGuage ();
 
 		InputKey ();
-	}
+
+        positionCommu();
+
+    }
 	protected override void UI_Setting(int hp_Max, int pNum, int cNum)
 	{
 		uiManagement.HPUISetting(hp_Max,pNum);
 		uiManagement.SkillUISetting (cNum, pNum);
 	}
 
-    public override void NomalAttack()
+    public override IEnumerator NomalAttack()
     {
-        FavoriteFunction.BulletInstantiate(nomalBullet, pNum, transform);
+        while (true)
+        {
+            FavoriteFunction.BulletInstantiate(nomalBullet, pNum, transform);
+
+            yield return new WaitForSeconds(1f);
+        }
     }
 
 }
