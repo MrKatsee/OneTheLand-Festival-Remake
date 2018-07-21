@@ -28,7 +28,8 @@ public class Character : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update () 
+	{
 
     }
 	public virtual void UI_Setting(int hp_Max, int pNum, int cNum)
@@ -59,7 +60,6 @@ public class Character : MonoBehaviour {
 		}
 		uiManagement.SkillUIChange(skillGuage, pNum);
 	}
-
     protected void InputKey()
     {
         if (pNum == 1)
@@ -83,6 +83,11 @@ public class Character : MonoBehaviour {
             {
                 transform.Translate(cSpd * Time.deltaTime, 0f, 0f);
             }
+			if (Input.GetKey(KeyCode.R))//예시 키 복사하거나 키 수정
+			{
+				if(skillGuage>0.4f)
+					skillGuage -= 0.4f;
+			}
         }
 
         if (pNum == 2)
@@ -105,7 +110,12 @@ public class Character : MonoBehaviour {
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 transform.Translate(cSpd * Time.deltaTime, 0f, 0f);
-            }
+			}
+			if (Input.GetKey(KeyCode.Slash))
+			{
+				if(skillGuage>0.4f)
+					skillGuage -= 0.4f;
+			}
         }
     }
 

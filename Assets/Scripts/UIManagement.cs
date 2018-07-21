@@ -7,7 +7,7 @@ public class UIManagement : MonoBehaviour {
 
 	GameObject Battle_UI;
 
-	public GameObject[] hp_UI = new GameObject[10];  //이거 써서 HP UI 만드셈 GameObject.Find로
+	public GameObject[] hp_UI = new GameObject[10];
 
 	public GameObject[] SkillGauge_Fill= new GameObject[2];
 	public GameObject[] SkillGauge_Empty=new GameObject[2];
@@ -26,31 +26,37 @@ public class UIManagement : MonoBehaviour {
 
 	public void HPUISetting(int hp_Max, int pNum)
 	{
-		hp_UI[0].SetActive (true);
-		hp_UI[1].SetActive (true);
-		hp_UI[2].SetActive (true);
-		hp_UI[3].SetActive (true);
-		hp_UI[4].SetActive (true);
-		hp_UI[5].SetActive (true);
-		hp_UI[6].SetActive (true);
-		hp_UI[7].SetActive (true);
-		hp_UI[8].SetActive (true);
-		hp_UI[9].SetActive (true);
-		if (hp_Max == 4&&pNum==1) 
+		if(pNum==1)
+		{
+			hp_UI[0].SetActive (true);
+			hp_UI[1].SetActive (true);
+			hp_UI[2].SetActive (true);
+			hp_UI[3].SetActive (true);
+			hp_UI[4].SetActive (true);
+		}
+		else if(pNum==2)
+		{
+			hp_UI[5].SetActive (true);
+			hp_UI[6].SetActive (true);
+			hp_UI[7].SetActive (true);
+			hp_UI[8].SetActive (true);
+			hp_UI[9].SetActive (true);
+		}
+		if ( hp_Max == 4 && pNum==1 )
 		{
 			hp_UI [4].SetActive (false);
 		}
-		else if (hp_Max == 3&&pNum==1) {
-
+		else if (hp_Max == 3&&pNum==1) 
+		{
 			hp_UI [4].SetActive (false);
 			hp_UI [3].SetActive (false);
 		}
-		if (hp_Max == 4&&pNum==2) {
-
+		if (hp_Max == 4&&pNum==2) 
+		{
 			hp_UI [9].SetActive (false);
 		}
-		else if (hp_Max == 3&&pNum==2) {
-
+		else if (hp_Max == 3&&pNum==2) 
+		{
 			hp_UI [9].SetActive (false);
 			hp_UI [8].SetActive (false);
 		}
@@ -65,7 +71,8 @@ public class UIManagement : MonoBehaviour {
 	public void HPUIChange(int currentHP , int pNum)
 	{
 		int p=((pNum-1)*5);
-		Destroy (hp_UI[currentHP-1+p]);
+		if(currentHP-1+p>=p)
+			hp_UI[currentHP-1+p].SetActive(false);
 	}
 
 	public void SkillUIChange(float currentSkillGuage, int pNum)
