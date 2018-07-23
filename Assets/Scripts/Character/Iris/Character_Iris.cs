@@ -25,7 +25,6 @@ public class Character_Iris : Character {
     // Use this for initialization
 
 	void Start () {
-
 		uiManagement = GameObject.Find ("Battle_UI").GetComponent<UIManagement>();
 		UI_Setting(hp_Max, pNum, cNum);
         StartCoroutine(NomalAttack());
@@ -43,12 +42,14 @@ public class Character_Iris : Character {
 		InputKey ();
 
         positionCommu();
+        DashCommand();
 
     }
 
-
     public override IEnumerator NomalAttack()
     {
+        yield return new WaitForSeconds(1f);
+
         while (true)
         {
             FavoriteFunction.BulletInstantiate(nomalBullet, pNum, transform);

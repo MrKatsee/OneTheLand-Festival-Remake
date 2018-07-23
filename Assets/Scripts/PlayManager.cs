@@ -33,7 +33,8 @@ public class PlayManager
 
     public float gameTimeScale = 1f;
 
-    public Vector3 p1Position;
-    public Vector3 p2Position;
+
+    public Character p1Info;
+    public Character p2Info; //캐릭터로 바꾸새ㅔㅁ
     //For Test
 }

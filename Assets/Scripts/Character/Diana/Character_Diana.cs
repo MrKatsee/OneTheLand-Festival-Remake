@@ -43,10 +43,15 @@ public class Character_Diana : Character {
         InputKey();
 
         positionCommu();
+
+        DashCommand();
+
     }
 
     public override IEnumerator NomalAttack()
     {
+        yield return new WaitForSeconds(1f);
+
         while (true)
         {
             FavoriteFunction.BulletInstantiate(nomalBullet, pNum, transform);
