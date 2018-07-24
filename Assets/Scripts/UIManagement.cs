@@ -71,8 +71,8 @@ public class UIManagement : MonoBehaviour {
 	public void HPUIChange(int currentHP , int pNum)
 	{
 		int p=((pNum-1)*5);
-		if(currentHP-1+p>=p)
-			hp_UI[currentHP-1+p].SetActive(false);
+		if(currentHP+p>=p)
+			hp_UI[currentHP+p].SetActive(false);
 	}
 
 	public void SkillUIChange(float currentSkillGuage, int pNum)
