@@ -43,6 +43,8 @@ public class FavoriteFunction : MonoBehaviour {
 
     public static Vector3 VectorCalculator(int pNum)
     {
+        
+
         Vector3 resultVector;
         Vector3 p1Vector = PlayManager.Instance.p1Info.myPosition;
         Vector3 p2Vector = PlayManager.Instance.p2Info.myPosition;
@@ -56,6 +58,7 @@ public class FavoriteFunction : MonoBehaviour {
         }
 
         return resultVector;
+        
     }
 
     public static void ObjectRotation (Vector3 directionVector, GameObject rotatingObject)

@@ -86,7 +86,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &114162081373680808
 MonoBehaviour:
@@ -103,9 +103,12 @@ MonoBehaviour:
   pNum: 0
   cNum: 0
   cSpd: 0
+  bomb: 0
   hp: 0
   skillGuage: 0
   nomalBullet: {fileID: 0}
+  myPosition: {x: 0, y: 0, z: 0}
+  dashInput: 0
 --- !u!212 &212492401986872834
 SpriteRenderer:
   m_ObjectHideFlags: 1

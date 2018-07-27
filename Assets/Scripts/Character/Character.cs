@@ -9,6 +9,9 @@ public class Character : MonoBehaviour {
     public int cNum;
 
     public float cSpd;
+    public float skillGuageSpd = 1f;
+
+    public int bomb = 0;
 
     public int hp;  //대입은 Character_Iris / Character_Diana 등, 자식 클래스에서 해줌
 	protected int hp_Max;
@@ -23,25 +26,47 @@ public class Character : MonoBehaviour {
     protected bool dashCommand = false;
     public int dashInput = 0;
 
+    protected Character oppCharacter;
+
+    public int irisStackNum = 0;
+    int irisStackNum_Temp;
+    public float irisStackTimer = 0f;
+    public float cSpd_Temp;
+
+    public bool isSuper = false;
+
     void Awake()
     {
     }
 
     // Use this for initialization
-    void Start () {
-
+    public virtual void Start () {
+        StartCoroutine(NomalAttack());
+        StartCoroutine(BattleReady());
+        StartCoroutine(BombCharge());
     }
 
     // Update is called once per frame
-    void Update () 
+    public virtual void Update () 
 	{
+        AltHP();
 
+        AltSkillGuage();
+        NomalAttack();
+        InputKey();
+
+        positionCommu();
+        DashCommand();
     }
+
+
+
 	public virtual void UI_Setting(int hp_Max, int pNum, int cNum)
 	{
 		uiManagement.HPUISetting (hp_Max, pNum);
 		uiManagement.SkillUISetting ( cNum, pNum);
 	}
+
 	public void AltHP()
 	{
 		if (hp > hp_Max)
@@ -61,8 +86,25 @@ public class Character : MonoBehaviour {
 	{
 		if (skillGuage < 1f)
 		{
-			skillGuage = skillGuage+Time.deltaTime * 0.2f;
-		}
+            skillGuageSpd = 1f;
+
+            if (irisStackNum == 1)
+            {
+                skillGuageSpd = skillGuageSpd * 0.8f;
+            }
+
+            else if (irisStackNum == 2)
+            {
+                skillGuageSpd = skillGuageSpd * 0.7f;
+            }
+
+            else if (irisStackNum == 3)
+            {
+                skillGuageSpd = skillGuageSpd * 0.6f;
+            }
+
+            skillGuage = skillGuage + Time.deltaTime * 0.2f * skillGuageSpd;
+        }
 		uiManagement.SkillUIChange(skillGuage, pNum);
 	}
     protected void InputKey()
@@ -88,11 +130,6 @@ public class Character : MonoBehaviour {
             {
                 transform.Translate(cSpd * Time.deltaTime, 0f, 0f);
             }
-			if (Input.GetKey(KeyCode.R))//예시 키 복사하거나 키 수정
-			{
-				if(skillGuage>0.4f)
-					skillGuage -= 0.4f;
-			}
         }
 
         if (pNum == 2)
@@ -116,11 +153,55 @@ public class Character : MonoBehaviour {
             {
                 transform.Translate(cSpd * Time.deltaTime, 0f, 0f);
 			}
-			if (Input.GetKey(KeyCode.Slash))
-			{
-				if(skillGuage>0.4f)
-					skillGuage -= 0.4f;
-			}
+        }
+    }
+
+    protected virtual void InputSkillKey()
+    {
+        if (pNum == 1)
+        {
+            if (Input.GetKey(KeyCode.T))
+            {
+                if (skillGuage > 0.4f)
+                {
+                    skillGuage -= 0.4f;
+                }
+            }
+
+            if (Input.GetKey(KeyCode.Y))
+            {
+                if (skillGuage > 0.4f)
+                {
+                    skillGuage -= 0.4f;
+                }
+            }
+
+            if (Input.GetKey(KeyCode.U))
+            {
+                if (skillGuage > 0.4f)
+                {
+                    skillGuage -= 0.4f;
+                }
+            }
+
+            if (Input.GetKey(KeyCode.G))
+            {
+                if (skillGuage > 0.4f)
+                {
+                    skillGuage -= 0.4f;
+                }
+            }
+        }
+
+        if (pNum == 2)
+        {
+            if (Input.GetKey(KeyCode.Slash))
+            {
+                if (skillGuage > 0.4f)
+                {
+                    skillGuage -= 0.4f;
+                }
+            }
         }
     }
 
@@ -153,13 +234,60 @@ public class Character : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D c)
     {
-        if (c.tag == "Bullet" && c.GetComponent<Bullet>().pNum_Bullet != pNum)
+        if (c.tag == "Bullet" && c.GetComponent<Bullet>().pNum_Bullet != pNum && isSuper == false)
         {
-            hp -= 1;
-
-            if (c.GetComponent<Bullet>().canDestroy == true)
+            if (oppCharacter.cNum == 1)
             {
-                c.GetComponent<Bullet>().DestroyBullet();
+                irisStackNum++;
+                irisStackTimer = 7f;
+
+                if (irisStackNum > 3)
+                {
+                    irisStackNum = 2;
+                    hp -= 1;
+                }
+
+                if (c.GetComponent<Bullet>().canDestroy == true)
+                {
+                    c.GetComponent<Bullet>().DestroyBullet();
+                }
+            }
+            else
+            {
+                hp -= 1;
+
+                if (c.GetComponent<Bullet>().canDestroy == true)
+                {
+                    c.GetComponent<Bullet>().DestroyBullet();
+                }
+            }
+        }
+    }
+
+    protected IEnumerator IrisSkillTimer()
+    {
+        while(true)
+        {
+            yield return null;
+
+            irisStackTimer -= Time.deltaTime;
+
+            if (irisStackTimer <= 0f && irisStackNum > 0)
+            {
+                irisStackTimer = 7f;
+                irisStackNum -= 1;
+            }
+        }
+
+    }
+
+    private void IrisSkillDebuff()
+    {
+        if (irisStackNum_Temp != irisStackNum)
+        {
+            if (irisStackNum == 0)
+            {
+
             }
         }
     }
@@ -305,5 +433,63 @@ public class Character : MonoBehaviour {
             transform.Translate(-10f, 0f, 0f);
         if (input == 4)
             transform.Translate(10f, 0f, 0f);
+    }
+
+    protected virtual IEnumerator BombCharge()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(10f);
+
+            bomb++;
+
+            Debug.Log("Bomb: " + bomb);
+        }
+    }
+
+    public virtual IEnumerator BattleReady()
+    {
+        yield return new WaitForSeconds(1f);
+
+        if (pNum == 1)
+        {
+            oppCharacter = PlayManager.Instance.p2Info;
+        }
+
+        if (pNum == 2)
+        {
+            oppCharacter = PlayManager.Instance.p1Info;
+        }
+
+        if (oppCharacter.pNum == 1)
+        {
+            StartCoroutine(IrisSkillTimer());
+        }
+
+        cSpd_Temp = cSpd;
+        StartCoroutine(AltCSpd());
+    }
+
+    public virtual IEnumerator AltCSpd()
+    {
+        while(true)
+        {
+            cSpd = cSpd_Temp;
+
+            if (irisStackNum == 1)
+            {
+                cSpd = cSpd * 0.8f;
+            }
+            if (irisStackNum == 2)
+            {
+                cSpd = cSpd * 0.7f;
+            }
+            if (irisStackNum == 3)
+            {
+                cSpd = cSpd * 0.6f;
+            }
+
+            yield return null;
+        }
     }
 }

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114147967343722182}
   - component: {fileID: 61667540431155674}
   - component: {fileID: 50214590634875694}
+  - component: {fileID: 114835990580936170}
   m_Layer: 0
   m_Name: C_Iris
   m_TagString: Untagged
@@ -87,7 +88,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &114147967343722182
 MonoBehaviour:
@@ -100,6 +101,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04a374098496b44bb4e30571f27c8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114835990580936170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388906045943884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884ee83e12a9de44084ed847d665db82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oppPosition: {x: 0, y: 0, z: 0}
+  stackPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114911185047498268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,10 +129,12 @@ MonoBehaviour:
   pNum: 0
   cNum: 0
   cSpd: 0
+  bomb: 0
   hp: 0
   skillGuage: 0
   nomalBullet: {fileID: 0}
   myPosition: {x: 0, y: 0, z: 0}
+  dashInput: 0
 --- !u!212 &212615282245035224
 SpriteRenderer:
   m_ObjectHideFlags: 1

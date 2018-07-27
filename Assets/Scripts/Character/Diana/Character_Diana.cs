@@ -12,10 +12,17 @@ public class Character_Diana : Character {
         cSpd = 50f;
 
         if (PlayManager.Instance.p1Character == 2)
+        {
+            PlayManager.Instance.p1Info = GetComponent<Character_Diana>();
             pNum = 1;
 
+        }
+
         if (PlayManager.Instance.p2Character == 2)
+        {
+            PlayManager.Instance.p2Info = GetComponent<Character_Diana>();
             pNum = 2;
+        }
 
         cNum = 2;
 
@@ -23,28 +30,17 @@ public class Character_Diana : Character {
     }
 
     // Use this for initialization
-    void Start()
-	{
-
-		uiManagement = GameObject.Find ("Battle_UI").GetComponent<UIManagement>();
+    public override void Start()
+    {
+        base.Start();
+        uiManagement = GameObject.Find ("Battle_UI").GetComponent<UIManagement>();
 		UI_Setting(hp_Max, pNum, cNum);
-        StartCoroutine(NomalAttack());
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        NomalAttack();
-
-        AltHP();
-
-        AltSkillGuage();
-
-        InputKey();
-
-        positionCommu();
-
-        DashCommand();
+        base.Update();
 
     }
 
