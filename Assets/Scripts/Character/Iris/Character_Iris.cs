@@ -5,6 +5,7 @@ using UnityEngine;
 public class Character_Iris : Character
 {
     protected Iris_Passive irisPassive;
+    protected Iris_Skill2 irisSkill2;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class Character_Iris : Character
         nomalBullet = Resources.Load("Characters/Iris/Bullet/Bullet_IrisNomal") as GameObject;
 
         irisPassive = GetComponent<Iris_Passive>();
+        irisSkill2 = GetComponent<Iris_Skill2>();
     }
 
     // Use this for initialization
@@ -40,6 +42,8 @@ public class Character_Iris : Character
         base.Start();
         uiManagement = GameObject.Find("Battle_UI").GetComponent<UIManagement>();
         UI_Setting(hp_Max, pNum, cNum);
+
+        //irisSkill2.Start_FenFire(myPosition, pNum);
     }
 
     // Update is called once per frame
@@ -78,6 +82,7 @@ public class Character_Iris : Character
                 if (skillGuage > 0.2f)
                 {
                     skillGuage -= 0.2f;
+                    irisSkill2.Start_FenFire(myPosition, pNum);
                 }
             }
 
@@ -101,19 +106,8 @@ public class Character_Iris : Character
 
     public override IEnumerator BattleReady()
     {
-        yield return new WaitForSeconds(1f);
-
-        if (pNum == 1)
-        {
-            oppCharacter = PlayManager.Instance.p2Info;
-        }
-
-        if (pNum == 2)
-        {
-            oppCharacter = PlayManager.Instance.p1Info;
-        }
+        yield return StartCoroutine(base.BattleReady());
 
         irisPassive.PassiveStart(pNum, oppCharacter);
-
     }
 }

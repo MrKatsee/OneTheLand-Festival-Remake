@@ -16,6 +16,8 @@ public class Iris_Skill2 : MonoBehaviour {
 
     public void Start_FenFire(Vector3 myPosition, int pNum)
     {
-
+        Debug.Log("Skill2");
+        Debug.Log(myPosition);
+        Debug.Log(pNum);
     }
 }

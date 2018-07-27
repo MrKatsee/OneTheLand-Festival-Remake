@@ -57,6 +57,7 @@ public class Character : MonoBehaviour {
 
         positionCommu();
         DashCommand();
+        InputSkillKey();
     }
 
 

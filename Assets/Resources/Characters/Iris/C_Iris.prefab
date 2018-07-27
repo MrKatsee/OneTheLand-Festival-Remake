@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 61667540431155674}
   - component: {fileID: 50214590634875694}
   - component: {fileID: 114835990580936170}
+  - component: {fileID: 114970325504254080}
   m_Layer: 0
   m_Name: C_Iris
   m_TagString: Untagged
@@ -112,8 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884ee83e12a9de44084ed847d665db82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oppPosition: {x: 0, y: 0, z: 0}
-  stackPosition: {x: 0, y: 0, z: 0}
+  stackNum: 0
 --- !u!114 &114911185047498268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,12 +129,28 @@ MonoBehaviour:
   pNum: 0
   cNum: 0
   cSpd: 0
+  skillGuageSpd: 1
   bomb: 0
   hp: 0
   skillGuage: 0
   nomalBullet: {fileID: 0}
   myPosition: {x: 0, y: 0, z: 0}
   dashInput: 0
+  irisStackNum: 0
+  irisStackTimer: 0
+  cSpd_Temp: 0
+  isSuper: 0
+--- !u!114 &114970325504254080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388906045943884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf701c80c4ecb3d49b66d9009f8430f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212615282245035224
 SpriteRenderer:
   m_ObjectHideFlags: 1
