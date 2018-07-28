@@ -36,10 +36,6 @@ public class FavoriteFunction : MonoBehaviour {
         
     }
 
-    public void Test()
-    {
-        Debug.Log("testing");
-    }
 
     public static Vector3 VectorCalculator(int pNum)
     {

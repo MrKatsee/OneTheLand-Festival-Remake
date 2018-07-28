@@ -69,7 +69,7 @@ public class Character_Iris : Character
     {
         if (pNum == 1)
         {
-            if (Input.GetKey(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.T))
             {
                 if (skillGuage > 0.3f)
                 {
@@ -77,7 +77,7 @@ public class Character_Iris : Character
                 }
             }
 
-            if (Input.GetKey(KeyCode.Y))
+            if (Input.GetKeyDown(KeyCode.Y))
             {
                 if (skillGuage > 0.2f)
                 {
@@ -86,7 +86,7 @@ public class Character_Iris : Character
                 }
             }
 
-            if (Input.GetKey(KeyCode.U))
+            if (Input.GetKeyDown(KeyCode.U))
             {
                 if (skillGuage > 0.5f)
                 {
@@ -94,7 +94,7 @@ public class Character_Iris : Character
                 }
             }
 
-            if (Input.GetKey(KeyCode.G))
+            if (Input.GetKeyDown(KeyCode.G))
             {
                 if (skillGuage > 0.75f)
                 {

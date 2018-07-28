@@ -4,8 +4,24 @@ using UnityEngine;
 
 public class Iris_Skill2 : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    GameObject[] fenFire = new GameObject[3];
+    int isFenFire = 0;
+
+    Bullet_IrisSkill2 bulletIrisSkill2;
+
+    GameObject bulletManager;
+
+    private void Awake()
+    {
+        fenFire[0] = Resources.Load("Characters/Iris/Bullet/Iris_FenFire1") as GameObject;
+        fenFire[1] = Resources.Load("Characters/Iris/Bullet/Iris_FenFire2") as GameObject;
+        fenFire[2] = Resources.Load("Characters/Iris/Bullet/Iris_FenFire3") as GameObject;
+
+        bulletManager = GameObject.Find("BulletManager");
+    }
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -16,8 +32,23 @@ public class Iris_Skill2 : MonoBehaviour {
 
     public void Start_FenFire(Vector3 myPosition, int pNum)
     {
-        Debug.Log("Skill2");
-        Debug.Log(myPosition);
-        Debug.Log(pNum);
+        GameObject fenFire_Temp;
+        Vector3 createPosition;
+
+        createPosition = myPosition;
+        createPosition.x *= -1;
+
+        fenFire_Temp = Instantiate(fenFire[isFenFire], createPosition, Quaternion.identity);
+        fenFire_Temp.transform.parent = bulletManager.transform;
+        fenFire_Temp.GetComponent<Bullet>().pNum_Bullet = pNum;
+
+        bulletIrisSkill2 = fenFire_Temp.GetComponent<Bullet_IrisSkill2>();
+        bulletIrisSkill2.StartMoveFenFire(pNum, isFenFire, myPosition);
+
+        isFenFire++;
+        if(isFenFire > 2)
+        {
+            isFenFire = 0;
+        }
     }
 }
