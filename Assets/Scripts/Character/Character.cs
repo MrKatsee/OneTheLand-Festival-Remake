@@ -35,6 +35,11 @@ public class Character : MonoBehaviour {
 
     public bool isSuper = false;
 
+	protected float skill1_guage = 1f;
+	protected float skill2_guage = 1f;
+	protected float skill3_guage = 1f;
+	protected float skill4_guage = 1f;
+
     void Awake()
     {
     }
@@ -161,50 +166,95 @@ public class Character : MonoBehaviour {
     {
         if (pNum == 1)
         {
-            if (Input.GetKey(KeyCode.T))
+			if (Input.GetKeyDown(KeyCode.T))
             {
-                if (skillGuage > 0.4f)
+                if (skillGuage > skill1_guage)
                 {
-                    skillGuage -= 0.4f;
+					skillGuage -= skill1_guage;
+					skill1 ();
                 }
             }
 
-            if (Input.GetKey(KeyCode.Y))
+			if (Input.GetKeyDown(KeyCode.Y))
             {
-                if (skillGuage > 0.4f)
+				if (skillGuage > skill2_guage)
                 {
-                    skillGuage -= 0.4f;
+					skillGuage -= skill2_guage;
+					skill2 ();
                 }
             }
 
-            if (Input.GetKey(KeyCode.U))
+			if (Input.GetKeyDown(KeyCode.U))
             {
-                if (skillGuage > 0.4f)
+				if (skillGuage > skill3_guage)
                 {
-                    skillGuage -= 0.4f;
+					skillGuage -= skill3_guage;
+					skill3 ();
                 }
             }
 
-            if (Input.GetKey(KeyCode.G))
+			if (Input.GetKeyDown(KeyCode.G))
             {
-                if (skillGuage > 0.4f)
+				if (skillGuage > skill4_guage)
                 {
-                    skillGuage -= 0.4f;
+					skillGuage -= skill4_guage;
+					skill4 ();
                 }
             }
         }
 
         if (pNum == 2)
         {
-            if (Input.GetKey(KeyCode.Slash))
+			if (Input.GetKeyDown(KeyCode.M))
             {
-                if (skillGuage > 0.4f)
+				if (skillGuage > skill1_guage)
                 {
-                    skillGuage -= 0.4f;
+					skillGuage -= skill1_guage;
+					skill1 ();
                 }
             }
+			if (Input.GetKeyDown(KeyCode.Comma))
+			{
+				if (skillGuage > skill2_guage)
+				{
+					skillGuage -= skill2_guage;
+					skill2 ();
+				}
+			}
+			if (Input.GetKeyDown(KeyCode.Period))
+			{
+				if (skillGuage > skill3_guage)
+				{
+					skillGuage -= skill3_guage;
+					skill3 ();
+				}
+			}
+			if (Input.GetKeyDown(KeyCode.Slash))
+			{
+				if (skillGuage > skill4_guage)
+				{
+					skillGuage -= skill4_guage;
+					skill4 ();
+				}
+			}
         }
     }
+
+	protected virtual void skill1()
+	{
+	}
+
+	protected virtual void skill2()
+	{
+	}
+
+	protected virtual void skill3()
+	{
+	}
+
+	protected virtual void skill4()
+	{
+	}
 
     protected void positionCommu()
     {

@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 114162081373680808}
   - component: {fileID: 61650828253614342}
   - component: {fileID: 50812940021595602}
+  - component: {fileID: 114130293667499610}
+  - component: {fileID: 114377086761489304}
   m_Layer: 0
   m_Name: C_Diana
   m_TagString: Untagged
@@ -88,6 +90,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &114130293667499610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1176122212942164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3acfb27a4a62a74ab342f76be9ef9ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skill1_Bullet: {fileID: 0}
 --- !u!114 &114162081373680808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,12 +117,28 @@ MonoBehaviour:
   pNum: 0
   cNum: 0
   cSpd: 0
+  skillGuageSpd: 1
   bomb: 0
   hp: 0
   skillGuage: 0
   nomalBullet: {fileID: 0}
   myPosition: {x: 0, y: 0, z: 0}
   dashInput: 0
+  irisStackNum: 0
+  irisStackTimer: 0
+  cSpd_Temp: 0
+  isSuper: 0
+--- !u!114 &114377086761489304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1176122212942164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04a374098496b44bb4e30571f27c8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212492401986872834
 SpriteRenderer:
   m_ObjectHideFlags: 1
