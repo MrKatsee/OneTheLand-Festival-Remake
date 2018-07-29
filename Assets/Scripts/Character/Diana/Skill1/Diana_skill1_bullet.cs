@@ -16,8 +16,8 @@ public class Diana_skill1_bullet : Bullet {
 		FavoriteFunction.ObjectRotation(directionVector, gameObject);
 		created_bullet= Resources.Load("Characters/Diana/Bullet/created_bullet") as GameObject;
 
-		create_bullet_vector1=Vector3.Cross(directionVector,new Vector3(0f,0f,1f));
-		create_bullet_vector2=Vector3.Cross(directionVector,new Vector3(0f,0f,-1f));
+		create_bullet_vector1=Vector3.Cross(directionVector,new Vector3(0f,0f,1f)).normalized;
+		create_bullet_vector2=Vector3.Cross(directionVector,new Vector3(0f,0f,-1f)).normalized;
 		AutoDestroy();
 		StartCoroutine (Create_Bullet ());
 	}

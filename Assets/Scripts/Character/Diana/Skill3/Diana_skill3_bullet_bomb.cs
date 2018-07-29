@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Diana_Skill3 : MonoBehaviour {
+public class Diana_skill3_bullet_bomb : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		Destroy (gameObject, 2f);
 	}
 }

@@ -21,7 +21,6 @@ public class Diana_skill1 : MonoBehaviour {
 		while(count<6)
 		{
 			count++;
-			Debug.Log (pNum);
 			FavoriteFunction.BulletInstantiate (skill1_Bullet, pNum, transform);
 			yield return new WaitForSeconds (continue_bullet);
 		}
