@@ -6,6 +6,9 @@ public class Character_Iris : Character
 {
     protected Iris_Passive irisPassive;
     protected Iris_Skill2 irisSkill2;
+    protected Iris_Skill1 irisSkill1;
+    protected Iris_Skill3 irisSkill3;
+    protected Iris_Skill4 irisSkill4;
 
     private void Awake()
     {
@@ -33,6 +36,9 @@ public class Character_Iris : Character
 
         irisPassive = GetComponent<Iris_Passive>();
         irisSkill2 = GetComponent<Iris_Skill2>();
+        irisSkill1 = GetComponent<Iris_Skill1>();
+        irisSkill4 = GetComponent<Iris_Skill4>();
+        irisSkill3 = GetComponent<Iris_Skill3>();
     }
 
     // Use this for initialization
@@ -74,6 +80,7 @@ public class Character_Iris : Character
                 if (skillGuage > 0.3f)
                 {
                     skillGuage -= 0.3f;
+                    irisSkill1.Start_TigerMoth(transform, pNum);
                 }
             }
 
@@ -91,6 +98,7 @@ public class Character_Iris : Character
                 if (skillGuage > 0.5f)
                 {
                     skillGuage -= 0.5f;
+                    irisSkill3.Start_TheDayDream();
                 }
             }
 
@@ -99,6 +107,7 @@ public class Character_Iris : Character
                 if (skillGuage > 0.75f)
                 {
                     skillGuage -= 0.75f;
+                    irisSkill4.Start_Ectasy(pNum);
                 } 
             }
         }

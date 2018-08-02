@@ -15,9 +15,9 @@ public class Bullet_IrisSkill2 : Bullet {
 		
 	}
 
-    public void StartMoveFenFire(int pNum, int fenFireNum, Vector3 myPosition)
+    public void StartMoveFenFire(int pNum, int fenFireNum, Vector3 myPosition, float moveLength)
     {
-        StartCoroutine(MoveFenFire(pNum, fenFireNum, myPosition));
+        StartCoroutine(AccelationFF(pNum, fenFireNum, myPosition, moveLength));
     }
 
     public IEnumerator MoveFenFire(int pNum, int fenFireNum, Vector3 myPosition)
@@ -65,5 +65,53 @@ public class Bullet_IrisSkill2 : Bullet {
             transform.position = bulletPosition;
             yield return null;
         }
+    }
+
+    public IEnumerator AccelationFF(int pNum, int fenFireNum, Vector3 myPosition, float moveLength)
+    {
+        float accelVelocity = 0f;
+        float maxVelocity;
+        float accelCount = 0f;
+        float test;
+
+        maxVelocity = 2 * moveLength / 0.25f;
+        test = Time.realtimeSinceStartup;
+
+        while (true)
+        {
+            if (accelVelocity >= maxVelocity)
+            {
+
+                Debug.Log(Time.realtimeSinceStartup - test);
+                break;
+            }
+
+            accelVelocity = (Mathf.Lerp(0f, maxVelocity, accelCount));
+            accelCount += Time.deltaTime * 5f;
+            transform.position += transform.right * accelVelocity * Time.deltaTime;
+
+            yield return null;
+        }
+
+        accelVelocity = maxVelocity;
+        accelCount = 0;
+
+
+        while (true)
+        {
+
+            if (accelVelocity <= 0f)
+            {
+                break;
+            }
+
+            accelVelocity = (Mathf.Lerp(maxVelocity, 0f, accelCount));
+            accelCount += Time.deltaTime * 5.0f;
+            transform.position += transform.right * accelVelocity * Time.deltaTime;
+
+            yield return null;
+        }
+
+        StartCoroutine(MoveFenFire(pNum, fenFireNum, myPosition));
     }
 }

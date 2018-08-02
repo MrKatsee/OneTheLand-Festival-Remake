@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour {
 
     public virtual void ShootBullet()
     {
-        transform.position += directionVector * bSpd;
+        transform.position += directionVector * bSpd * Time.deltaTime;
     }
 
     public virtual void DestroyBullet()

@@ -26,6 +26,9 @@ GameObject:
   - component: {fileID: 50214590634875694}
   - component: {fileID: 114835990580936170}
   - component: {fileID: 114970325504254080}
+  - component: {fileID: 114958061085875044}
+  - component: {fileID: 114280970548983586}
+  - component: {fileID: 114367486912211944}
   m_Layer: 0
   m_Name: C_Iris
   m_TagString: Untagged
@@ -102,6 +105,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04a374098496b44bb4e30571f27c8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114280970548983586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388906045943884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023514c98cebbfb4087cd9f1749a0032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114367486912211944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388906045943884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd34e0cd1c6ef145a28c6c3b35e75c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114835990580936170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,6 +165,17 @@ MonoBehaviour:
   irisStackTimer: 0
   cSpd_Temp: 0
   isSuper: 0
+--- !u!114 &114958061085875044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388906045943884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d9c546de6816741acae3e4242c9173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114970325504254080
 MonoBehaviour:
   m_ObjectHideFlags: 1
