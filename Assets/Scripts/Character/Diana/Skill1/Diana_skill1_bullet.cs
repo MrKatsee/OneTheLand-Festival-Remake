@@ -11,7 +11,7 @@ public class Diana_skill1_bullet : Bullet {
 	GameObject created_bullet;//생성되는 총알
 
 	void Start () {
-		directionVector =FavoriteFunction.VectorCalculator(pNum_Bullet);//총알의 방향 : 쏘는 순간의 상대의 위치로
+		directionVector =FavoriteFunction.VectorCalculator(pNum_Bullet,transform);//총알의 방향 : 쏘는 순간의 상대의 위치로
 		bSpd = 0.7f;
 		FavoriteFunction.ObjectRotation(directionVector, gameObject);
 		created_bullet= Resources.Load("Characters/Diana/Bullet/created_bullet") as GameObject;

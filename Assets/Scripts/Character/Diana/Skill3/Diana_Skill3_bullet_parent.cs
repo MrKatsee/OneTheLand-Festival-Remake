@@ -11,7 +11,7 @@ public class Diana_Skill3_bullet_parent : Bullet {
 
 
 	void Start () {
-		directionVector =new Vector3(FavoriteFunction.VectorCalculator(pNum_Bullet).x,0f,0f).normalized;//총알의 방향 : 직선
+		directionVector =new Vector3(FavoriteFunction.VectorCalculator(pNum_Bullet,transform).x,0f,0f).normalized;//총알의 방향 : 직선
 		bSpd = 0.5f;
 		FavoriteFunction.ObjectRotation(directionVector, gameObject);
 		start_position = transform.position;

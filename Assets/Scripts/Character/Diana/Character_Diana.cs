@@ -11,6 +11,7 @@ public class Character_Diana : Character {
 	bool skill1_start;//총알이 변화했는지
 
 	GameObject skill3_bullet_parent;
+	GameObject normal_bullet_Impact;
 
 	protected Diana_skill1 diana_skill1;
 
@@ -36,6 +37,7 @@ public class Character_Diana : Character {
 		}
 		nomalBullet = Resources.Load("Characters/Diana/Bullet/Bullet_DianaNomal") as GameObject;
 		skill3_bullet_parent = Resources.Load ("Characters/Diana/Bullet/Diana_skill3_bullet_Parent") as GameObject;
+
 
         cNum = 2;
 
@@ -77,6 +79,8 @@ public class Character_Diana : Character {
 				else {
 					yield return new WaitForSeconds (0.6f);
 					bullet_count = bullet_max;// 크리티컬 터짐 + 앞으로 임펙트 추가해야함
+
+
 				}
 			}
 			else 

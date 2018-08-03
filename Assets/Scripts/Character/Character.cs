@@ -277,7 +277,7 @@ public class Character : MonoBehaviour {
 
         while (true)
         {
-            FavoriteFunction.BulletInstantiate(nomalBullet, pNum, transform);
+			if(nomalBullet != null) FavoriteFunction.BulletInstantiate(nomalBullet, pNum, transform);
 
             yield return new WaitForSeconds(1f);
         }

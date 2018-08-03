@@ -25,6 +25,7 @@ public class BattleManager : MonoBehaviour {
     IEnumerator GameCount()
     {
         yield return StartCoroutine(TimeManager.WaitForRealTime(1f));
+		//yield return new WaitForSecondsRealtime (1f);
 
         GetComponent<CreateCharacter>().C_Create(p1CNum, p2CNum);
 
