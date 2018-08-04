@@ -11,7 +11,8 @@ public class CreateCharacter : MonoBehaviour {
     {
         pr_Character[0] = Resources.Load ("Characters/Iris/C_Iris") as GameObject;
 		pr_Character[1] = Resources.Load("Characters/Diana/C_Diana") as GameObject;
-		pr_Character[6] = Resources.Load("Characters/Mecanic/Mecanic") as GameObject;//Mecanic
+        pr_Character[2] = Resources.Load("Characters/Harin/C_Harin") as GameObject;
+        pr_Character[6] = Resources.Load("Characters/Mecanic/Mecanic") as GameObject;//Mecanic
     }
 
     void Start () {

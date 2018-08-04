@@ -29,7 +29,7 @@ public class PlayManager
     }
 
     public int p1Character = 1;
-    public int p2Character = 7;
+    public int p2Character = 2;
 
     public float gameTimeScale = 1f;
 

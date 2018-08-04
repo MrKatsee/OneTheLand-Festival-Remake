@@ -44,8 +44,6 @@ public class FavoriteFunction : MonoBehaviour {
 
     public static Vector3 VectorCalculator(int pNum, Transform myTransform)  //나와 상대 사이의 벡터를 계산
     {
-        
-
         Vector3 resultVector = new Vector3 (0f, 0f, 0f);
         Vector3 myVector = myTransform.position;
         Vector3 p1Vector = PlayManager.Instance.p1Info.myPosition;
